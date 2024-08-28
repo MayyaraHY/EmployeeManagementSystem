@@ -83,10 +83,6 @@ public class DisplayEmployees implements Initializable {
                     Text CINData = new Text(employee.getCIN() + "\n");
                     CINData.setStyle(dataStyle);
 
-                    VBox textContainer = new VBox(10);
-                    textContainer.getChildren().addAll(lastNameText,lastNameData, firstNameText,firstNameData, CINText, CINData);
-                    textContainer.setAlignment(Pos.CENTER);
-                    textContainer.setPadding(new Insets(20,0,0,0));
 
 
                     String imagePath = employee.getImageEmployee();
@@ -99,6 +95,9 @@ public class DisplayEmployees implements Initializable {
                     lastNameText.setWrappingWidth(200);
                     firstNameData.setWrappingWidth(200);
                     firstNameText.setWrappingWidth(200);
+
+
+
 
                     //Setting icons for the buttons
                     //1 load images
@@ -136,9 +135,14 @@ public class DisplayEmployees implements Initializable {
 
 
                     textFlow.getChildren().addAll(lastNameText, lastNameData, firstNameText, firstNameData, CINText, CINData );
+                    textFlow.setPadding(new Insets(20, 0, 0,20 ));
+
+
                     container.add(imageView, 0, 0); // Image on the left
                     container.add(textFlow, 1, 0); // Employee details in the middle
                     container.add(buttonContainer, 2, 0); // Buttons on the right side
+
+
 
                     // Adjust column widths
                     ColumnConstraints col1 = new ColumnConstraints(150); // Image column
@@ -150,9 +154,16 @@ public class DisplayEmployees implements Initializable {
                     setGraphic(container); // Set the constructed UI as the cell graphic
 
 
+                    //functions for add and delete
+
+                    deleteButton.setOnAction(event -> {
+                        System.out.println("delete employee : "+ employee.getLastNameEmployee());
+                        deleteEmployee(employee.getIdEmployee());
+                    });
+
+
 
                     //System.out.println("image path : " +imagePath );
-
                 }
             }
         });
@@ -161,4 +172,14 @@ public class DisplayEmployees implements Initializable {
 
 
     }
+
+
+    public void deleteEmployee(int idEmployee) {
+        // Call the remove method from EmployeesService
+        employeeService.remove(idEmployee);
+
+        // Optionally, refresh the list or remove the item from the UI
+        employeesList.getItems().removeIf(emp -> emp.getIdEmployee() == idEmployee);
+    }
+
 }
