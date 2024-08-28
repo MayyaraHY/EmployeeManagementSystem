@@ -105,18 +105,27 @@ public class DisplayEmployees implements Initializable {
                     String deleteIconPath = "file:D:\\mmm\\mmm\\2023-2024 3A14\\Stage\\ComplexePilote\\src\\main\\resources\\icons\\delete.png";
                     Image deleteIcon = new Image(deleteIconPath);
 
+                    String updateIconPath = "file:D:\\mmm\\mmm\\2023-2024 3A14\\Stage\\ComplexePilote\\src\\main\\resources\\icons\\edit.png";
+                    Image updateIcon = new Image(updateIconPath);
+
                     //2 set image view
                     ImageView deleteIconView = new ImageView(deleteIcon);
                     deleteIconView.setFitWidth(25);
                     deleteIconView.setFitHeight(25);
 
+                    ImageView updateIconView = new ImageView(updateIcon);
+                    updateIconView.setFitWidth(25);
+                    updateIconView.setFitHeight(25);
+
                     // Create "Update" and "Delete" buttons
-                    Button updateButton = new Button("Update");
+                    Button updateButton = new Button();
+                    updateButton.setGraphic(updateIconView);
                     Button deleteButton = new Button();
                     deleteButton.setGraphic(deleteIconView);
 
                     //removing background
                     deleteButton.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+                    updateButton.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
 
                     // Add buttons in a VBox to stack them vertically
                     VBox buttonContainer = new VBox(10); // Vertical spacing of 10
