@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="533.0" prefWidth="797.0" style="-fx-background-color: #E2D8F6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.DisplayEmployees">
+   <children>
+      <MFXLegacyListView fx:id="employeesList" layoutX="43.0" layoutY="86.0" prefHeight="391.0" prefWidth="686.0" style="-fx-background-color: #E2D8F6;" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="idCIN" layoutX="568.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="83.13671875" />
+   </children>
+</AnchorPane>
