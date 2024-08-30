@@ -13,20 +13,21 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
 
     @Override
     public void add(Employees employee) {
-        String sql = "INSERT INTO `employees` (`nameEmployee`, `lastNameEmployee`, `emailEmployee`, `phoneEmployee`, `imageEmployee`, " +
+        String sql = "INSERT INTO `employees` (`nameEmployee`, `lastNameEmployee`,  `CIN`,`emailEmployee`, `phoneEmployee`, `imageEmployee`, " +
                 "`birthdayEmployee`, `genderEmployee`, `positionEmployee`, `hireDateEmployee`, `salaryEmployee`) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
         try (PreparedStatement ps = cnx.prepareStatement(sql)) {
             ps.setString(1, employee.getNameEmployee());
             ps.setString(2, employee.getLastNameEmployee());
-            ps.setString(3, employee.getEmailEmployee());
-            ps.setString(4, employee.getPhoneEmployee());
-            ps.setString(5, employee.getImageEmployee());
-            ps.setDate(6, new java.sql.Date(employee.getBirthdayEmployee().getTime()));
-            ps.setString(7, employee.getGenderEmployee());
-            ps.setString(8, employee.getPositionEmployee());
-            ps.setDate(9, new java.sql.Date(employee.getHireDateEmployee().getTime()));
-            ps.setFloat(10, employee.getSalaryEmployee());
+            ps.setString(3,employee.getCIN());
+            ps.setString(4, employee.getEmailEmployee());
+            ps.setString(5, employee.getPhoneEmployee());
+            ps.setString(6, employee.getImageEmployee());
+            ps.setDate(7, new java.sql.Date(employee.getBirthdayEmployee().getTime()));
+            ps.setString(8, employee.getGenderEmployee());
+            ps.setString(9, employee.getPositionEmployee());
+            ps.setDate(10, new java.sql.Date(employee.getHireDateEmployee().getTime()));
+            ps.setFloat(11, employee.getSalaryEmployee());
 
             ps.executeUpdate();
             System.out.println("Employee: " + employee.getNameEmployee() + " " + employee.getLastNameEmployee() + " added successfully.");
@@ -42,6 +43,7 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
             String req = "UPDATE employees SET " +
                     "nameEmployee=?, " +
                     "lastNameEmployee=?, " +
+                    "CIN=?, " +
                     "emailEmployee=?, " +
                     "phoneEmployee=?, " +
                     "imageEmployee=?, " +
@@ -56,15 +58,16 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setString(1, employee.getNameEmployee());
             ps.setString(2, employee.getLastNameEmployee());
-            ps.setString(3, employee.getEmailEmployee());
-            ps.setString(4, employee.getPhoneEmployee());
-            ps.setString(5, employee.getImageEmployee());
-            ps.setDate(6, employee.getBirthdayEmployee());
-            ps.setString(7, employee.getGenderEmployee());
-            ps.setString(8, employee.getPositionEmployee());
-            ps.setDate(9, employee.getHireDateEmployee());
-            ps.setFloat(10, employee.getSalaryEmployee());
-            ps.setInt(11, employee.getIdEmployee());
+            ps.setString(3,employee.getCIN());
+            ps.setString(4, employee.getEmailEmployee());
+            ps.setString(5, employee.getPhoneEmployee());
+            ps.setString(6, employee.getImageEmployee());
+            ps.setDate(7, employee.getBirthdayEmployee());
+            ps.setString(8, employee.getGenderEmployee());
+            ps.setString(9, employee.getPositionEmployee());
+            ps.setDate(10, employee.getHireDateEmployee());
+            ps.setFloat(11, employee.getSalaryEmployee());
+            ps.setInt(12, employee.getIdEmployee());
 
             // Execute the update statement
             ps.executeUpdate();
