@@ -49,6 +49,8 @@ public class DisplayEmployees implements Initializable {
     EmployeeService employeeService = new EmployeeService();
     Employees employee = new Employees();
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -217,6 +219,44 @@ public class DisplayEmployees implements Initializable {
         employeesList.getItems().addAll(employeeService.getAllEmployees());
 
 
+
+        employeesList.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Employees selectedItem = employeesList.getSelectionModel().getSelectedItem();
+                // Perform the action you want with the selected item
+                System.out.println("Double-clicked on: " + selectedItem);
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/EmployeeItem.fxml"));
+                loader.setControllerFactory(controllerClass -> {
+                    if (controllerClass == EmployeeItem.class) {
+                        EmployeeItem employeeItemController = new EmployeeItem();
+                        Employees employeeSelected = employeesList.getSelectionModel().getSelectedItem();
+                        employeeItemController.setPassedItem(employeeSelected);
+                        return employeeItemController;
+                    } else {
+                        return new EmployeeItem();
+                    }
+                });
+
+                Parent root = null;
+                try {
+                    root = loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+
+                stage.show();
+
+
+            }
+        });
+
+
+
     }
 
 
@@ -274,6 +314,7 @@ public class DisplayEmployees implements Initializable {
             System.out.println("Error loading FXML file.");
         }
     }
+
 
 
 }

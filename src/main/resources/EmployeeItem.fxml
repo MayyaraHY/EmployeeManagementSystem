@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="608.0" prefWidth="704.0" style="-fx-background-color: linear-gradient(#fafaff, #e2e4f2, #cfd2e6, #b0b8d8);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.EmployeeItem">
+   <children>
+      <ImageView fx:id="imageid" fitHeight="179.0" fitWidth="183.0" layoutX="45.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/blacj.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="nameid" fill="#32438f" layoutX="265.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="158.13671875">
+         <font>
+            <Font name="Century Gothic" size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="firstNameid" fill="#32438f" layoutX="265.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="158.13671875">
+         <font>
+            <Font name="Century Gothic" size="26.0" />
+         </font>
+      </Text>
+      <Text fill="#32438f" layoutX="265.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN : " wrappingWidth="80.13671875">
+         <font>
+            <Font name="Century Gothic" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#32438f" layoutX="265.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance :" wrappingWidth="243.13671875">
+         <font>
+            <Font name="Century Gothic" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="BDid" fill="#043847" layoutX="482.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="152.13671875">
+         <font>
+            <Font name="Century Gothic" size="17.0" />
+         </font>
+      </Text>
+      <Text fx:id="CINid" fill="#043847" layoutX="344.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="152.13671875">
+         <font>
+            <Font name="Century Gothic" size="17.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="40.0" layoutY="470.0" prefHeight="120.0" prefWidth="610.0">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="21.0" layoutX="46.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/telephone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="45.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/email.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="phoneNumberid" layoutX="104.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="mailid" layoutX="104.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#32438f" layoutX="35.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact">
+               <font>
+                  <Font name="Century Gothic Bold" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text fill="#32438f" layoutX="265.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="106.13671875">
+         <font>
+            <Font name="Century Gothic" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="positionId" fill="#043847" layoutX="356.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="176.3125">
+         <font>
+            <Font name="Century Gothic" size="17.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="46.0" layoutY="279.0" prefHeight="184.0" prefWidth="620.0">
+         <children>
+            <Text fill="#32438f" layoutX="33.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congés">
+               <font>
+                  <Font name="Century Gothic Bold" size="25.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="addVacButton" fitHeight="26.0" fitWidth="27.0" layoutX="551.0" layoutY="12.0" onMouseClicked="#addVacationFunction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/plus.png" />
+               </image>
+            </ImageView>
+            <MFXLegacyListView fx:id="vancationList" layoutX="14.0" layoutY="47.0" prefHeight="120.0" prefWidth="587.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-13.0" prefHeight="62.0" prefWidth="721.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="36.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/home%20(2).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="background" prefHeight="582.0" prefWidth="793.0" style="-fx-background-color: linear-gradient(#e0f0e0, #b3c5b7, #9ab3a5, #85b2b2);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.AddEmployee">
+<AnchorPane fx:id="background" prefHeight="582.0" prefWidth="793.0" style="-fx-background-color: linear-gradient(#fafaff, #e2e4f2, #cfd2e6, #b0b8d8);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.AddEmployee">
    <children>
-      <Text fill="#144c57" layoutX="54.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un employé" wrappingWidth="330.13671875">
+      <Text fill="#32438f" layoutX="54.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un employé" wrappingWidth="330.13671875">
          <font>
-            <Font name="Britannic Bold" size="27.0" />
+            <Font name="Century Gothic" size="28.0" />
          </font>
       </Text>
       <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0" style="-fx-background-color: background-image: linear-gradient(#596db9, #9198cf, #c4c6e5, #f7f6fa);">
@@ -28,68 +28,68 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Text fx:id="nameid" fill="#012e3c" layoutX="95.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="80.13671875">
+      <Text fx:id="nameid" fill="#32438f" layoutX="95.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="80.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="nameField" layoutX="202.0" layoutY="159.0" />
-      <Text fx:id="firstNameId" fill="#012e3c" layoutX="95.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="80.13671875">
+      <Text fx:id="firstNameId" fill="#32438f" layoutX="95.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="80.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="firstNameField" layoutX="202.0" layoutY="204.0" />
-      <Text fx:id="CINid" fill="#012e3c" layoutX="95.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="80.13671875">
+      <Text fx:id="CINid" fill="#32438f" layoutX="95.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="80.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="CINField" layoutX="202.0" layoutY="247.0" />
-      <Text fx:id="birthdateId" fill="#012e3c" layoutX="46.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="155.13671875">
+      <Text fx:id="birthdateId" fill="#32438f" layoutX="23.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="196.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <DatePicker fx:id="birthdayField" layoutX="202.0" layoutY="459.0" />
-      <Text fx:id="emailId" fill="#012e3c" layoutX="95.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="80.13671875">
+      <Text fx:id="emailId" fill="#32438f" layoutX="95.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="80.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="emailField" layoutX="202.0" layoutY="299.0" />
-      <Text fx:id="phoneId" fill="#012e3c" layoutX="95.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télephone" wrappingWidth="99.13671875">
+      <Text fx:id="phoneId" fill="#32438f" layoutX="95.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télephone" wrappingWidth="99.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="phoneField" layoutX="202.0" layoutY="350.0" />
-      <Text fx:id="gendreId" fill="#012e3c" layoutX="91.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" wrappingWidth="99.13671875">
+      <Text fx:id="gendreId" fill="#32438f" layoutX="91.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" wrappingWidth="99.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
-      <Text fx:id="startdateId" fill="#012e3c" layoutX="384.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date de début de travail" wrappingWidth="190.13671875">
+      <Text fx:id="startdateId" fill="#32438f" layoutX="364.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date de début de travail" wrappingWidth="210.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="17.0" />
          </font>
       </Text>
       <DatePicker fx:id="startDateFiels" layoutX="574.0" layoutY="203.0" />
-      <Text fx:id="positionid" fill="#012e3c" layoutX="479.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" wrappingWidth="71.13671875">
+      <Text fx:id="positionid" fill="#32438f" layoutX="479.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" wrappingWidth="71.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="positionField" layoutX="574.0" layoutY="247.0" />
-      <Text fx:id="salaryId" fill="#012e3c" layoutX="479.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salaire" wrappingWidth="71.13671875">
+      <Text fx:id="salaryId" fill="#32438f" layoutX="479.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salaire" wrappingWidth="71.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="salaryField" layoutX="574.0" layoutY="288.0" />
-      <Text fx:id="imageId" fill="#012e3c" layoutX="479.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="71.13671875">
+      <Text fx:id="imageId" fill="#32438f" layoutX="479.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="71.13671875">
          <font>
-            <Font name="Bell MT" size="19.0" />
+            <Font name="Century Gothic" size="19.0" />
          </font>
       </Text>
       <TextField fx:id="imageURLid" layoutX="574.0" layoutY="331.0" prefHeight="25.0" prefWidth="80.0" />
@@ -100,7 +100,7 @@
           <MenuItem fx:id="femaleid" mnemonicParsing="false" onAction="#setGenderF" text="Femme" />
         </items>
       </MenuButton>
-      <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#addEmployeeButton" prefHeight="43.0" prefWidth="233.0" style="-fx-background-color: #012E3C;" text="Enregistrer" textFill="#bad6ba">
+      <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#addEmployeeButton" prefHeight="43.0" prefWidth="233.0" style="-fx-background-color: #596DB9;" text="Enregistrer" textFill="#cecbd4">
          <font>
             <Font name="Bell MT" size="16.0" />
          </font>

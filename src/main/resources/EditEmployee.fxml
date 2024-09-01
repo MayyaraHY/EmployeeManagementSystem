@@ -14,14 +14,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.EditEmployee">
    <children>
-      <AnchorPane fx:id="background" layoutX="-2.0" layoutY="-9.0" prefHeight="582.0" prefWidth="793.0" style="-fx-background-color: linear-gradient(#e0f0e0, #b3c5b7, #9ab3a5, #85b2b2);">
+      <AnchorPane fx:id="background" layoutX="-2.0" layoutY="-9.0" prefHeight="582.0" prefWidth="793.0" style="-fx-background-color: linear-gradient(#fafaff, #e2e4f2, #cfd2e6, #b0b8d8);">
          <children>
             <Text fill="#144c57" layoutX="54.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier employé" wrappingWidth="330.13671875">
                <font>
                   <Font name="Britannic Bold" size="27.0" />
                </font>
             </Text>
-            <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0" style="-fx-background-color: #BAD6BA;">
+            <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="35.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -102,7 +102,7 @@
                   <MenuItem fx:id="femaleid" mnemonicParsing="false" onAction="#setGenderf" text="Female" />
                </items>
             </MenuButton>
-            <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#editEmployeeButton" prefHeight="43.0" prefWidth="233.0" style="-fx-background-color: #012E3C;" text="Enregistrer" textFill="#bad6ba">
+            <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#editEmployeeButton" prefHeight="43.0" prefWidth="233.0" rippleColor="#cecbd4" style="-fx-background-color: #012E3C;" text="Enregistrer" textFill="#bad6ba">
                <font>
                   <Font name="Bell MT" size="16.0" />
                </font>
