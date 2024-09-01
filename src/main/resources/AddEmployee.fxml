@@ -19,7 +19,7 @@
             <Font name="Britannic Bold" size="27.0" />
          </font>
       </Text>
-      <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0" style="-fx-background-color: #BAD6BA;">
+      <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0" style="-fx-background-color: background-image: linear-gradient(#596db9, #9198cf, #c4c6e5, #f7f6fa);">
          <children>
             <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="35.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>

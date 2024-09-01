@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.EditEmployee">
+   <children>
+      <AnchorPane fx:id="background" layoutX="-2.0" layoutY="-9.0" prefHeight="582.0" prefWidth="793.0" style="-fx-background-color: linear-gradient(#e0f0e0, #b3c5b7, #9ab3a5, #85b2b2);">
+         <children>
+            <Text fill="#144c57" layoutX="54.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier employé" wrappingWidth="330.13671875">
+               <font>
+                  <Font name="Britannic Bold" size="27.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="-2.0" prefHeight="72.0" prefWidth="816.0" style="-fx-background-color: #BAD6BA;">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="35.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/home%20(2).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text fx:id="nameid" fill="#012e3c" layoutX="95.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="80.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="nameField" layoutX="202.0" layoutY="159.0" />
+            <Text fx:id="firstNameId" fill="#012e3c" layoutX="95.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="80.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="firstNameField" layoutX="202.0" layoutY="204.0" />
+            <Text fx:id="CINid" fill="#012e3c" layoutX="95.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN" wrappingWidth="80.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="CINField" layoutX="202.0" layoutY="247.0" />
+            <Text fx:id="birthdateId" fill="#012e3c" layoutX="46.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="155.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="birthdayField" layoutX="202.0" layoutY="459.0" />
+            <Text fx:id="emailId" fill="#012e3c" layoutX="95.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="80.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="emailField" layoutX="202.0" layoutY="299.0" />
+            <Text fx:id="phoneId" fill="#012e3c" layoutX="95.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télephone" wrappingWidth="99.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="phoneField" layoutX="202.0" layoutY="350.0" />
+            <Text fx:id="gendreId" fill="#012e3c" layoutX="91.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" wrappingWidth="99.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <Text fx:id="startdateId" fill="#012e3c" layoutX="384.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date de début de travail" wrappingWidth="190.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="startDateFiels" layoutX="574.0" layoutY="203.0" />
+            <Text fx:id="positionid" fill="#012e3c" layoutX="479.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" wrappingWidth="71.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="positionField" layoutX="574.0" layoutY="247.0" />
+            <Text fx:id="salaryId" fill="#012e3c" layoutX="479.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salaire" wrappingWidth="71.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="salaryField" layoutX="574.0" layoutY="288.0" />
+            <Text fx:id="imageId" fill="#012e3c" layoutX="479.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="71.13671875">
+               <font>
+                  <Font name="Bell MT" size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="imageURLid" layoutX="574.0" layoutY="331.0" prefHeight="25.0" prefWidth="80.0" />
+            <Button fx:id="uploadButton" layoutX="662.0" layoutY="331.0" mnemonicParsing="false" onAction="#browse" text="Importer" />
+            <MenuButton fx:id="gendreField" layoutX="202.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Genre">
+               <items>
+                  <MenuItem fx:id="maleid" mnemonicParsing="false" onAction="#setGendreM" text="Male" />
+                  <MenuItem fx:id="femaleid" mnemonicParsing="false" onAction="#setGenderf" text="Female" />
+               </items>
+            </MenuButton>
+            <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#editEmployeeButton" prefHeight="43.0" prefWidth="233.0" style="-fx-background-color: #012E3C;" text="Enregistrer" textFill="#bad6ba">
+               <font>
+                  <Font name="Bell MT" size="16.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

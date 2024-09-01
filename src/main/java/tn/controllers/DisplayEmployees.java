@@ -18,17 +18,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 import tn.models.Employees;
 import tn.services.EmployeeService;
+import tn.test.MainFX;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -186,6 +184,32 @@ public class DisplayEmployees implements Initializable {
                         });
                     });
 
+                    updateButton.setOnAction(event -> {
+                        // Create a confirmation alert
+                        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+                        confirmationAlert.setTitle("Confirmation de Mise à Jour");
+                        confirmationAlert.setHeaderText(null);
+                        confirmationAlert.setContentText("Êtes-vous sûr de vouloir modifier cet employé ?");
+
+                        // Set the button types for the alert
+                        ButtonType yesButton = new ButtonType("Oui");
+                        ButtonType noButton = new ButtonType("Non");
+                        confirmationAlert.getButtonTypes().setAll(yesButton, noButton);
+
+                        // Show the alert and wait for user response
+                        confirmationAlert.showAndWait().ifPresent(response -> {
+                            if (response == yesButton) {
+                                // Logic for updating employee
+                                System.out.println("update employee : " + employee.getIdEmployee());
+                                navigateToEditEmployee(employee.getIdEmployee());
+                                // Pass the employee object
+
+                            }
+                        });
+                    });
+
+
+
                 }
             }
         });
@@ -203,7 +227,32 @@ public class DisplayEmployees implements Initializable {
         // refresh the list or remove the item from the UI
         employeesList.getItems().removeIf(emp -> emp.getIdEmployee() == idEmployee);
     }
-    public void editEmployee(int idEmployee) {}
+
+
+    public void navigateToEditEmployee(int employee) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditEmployee.fxml"));
+            Parent root = loader.load();
+
+            System.out.println(employee);
+
+            // Pass employee details to the controller
+            EditEmployee controller = loader.getController();
+            controller.loadEmployeeData(employee);
+
+            // Get the primary stage from MainFX
+            Stage primaryStage = MainFX.getPrimaryStage();
+
+            // Set the new scene on the primary stage
+            primaryStage.setScene(new Scene(root));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exception, possibly show an error message
+        }
+    }
+
+
 
     public void addButton(MouseEvent event) {
         try {

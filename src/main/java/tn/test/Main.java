@@ -31,8 +31,9 @@ public class Main {
 
             // Initialize Employee object with the correct types
            /* Employees emp = new Employees(
-                    "bla",                   // nameEmployee (String)
+                    "update",                   // nameEmployee (String)
                     "blob",                  // lastNameEmployee (String)
+                    "123558",
                     "nvnre",                 // emailEmployee (String)
                     "12345678",              // phoneEmployee (String)
                     "image",                 // imageEmployee (String)
@@ -42,9 +43,13 @@ public class Main {
                     sqlHireDate,             // hireDateEmployee (java.sql.Date)
                     200.0f                 // salaryEmployee (float)
 
-            );
-*/
+            );*/
+
             //employeeService.add(emp);
+
+
+
+
 
 
         } catch (ParseException e) {
@@ -52,6 +57,17 @@ public class Main {
         }
 
         //employeeService.remove(3);
+
+        Employees employeeToUpdate = employeeService.getEmployeeById(7);
+
+        System.out.println("Updating employee with ID: " + employeeToUpdate.getIdEmployee());
+        System.out.println("Name: " + employeeToUpdate.getNameEmployee());
+        System.out.println("Last Name: " + employeeToUpdate.getLastNameEmployee());
+
+        employeeToUpdate.setNameEmployee("New Name");
+        employeeToUpdate.setLastNameEmployee("Updated Last Name");
+
+        employeeService.update(employeeToUpdate);
 
 
 
