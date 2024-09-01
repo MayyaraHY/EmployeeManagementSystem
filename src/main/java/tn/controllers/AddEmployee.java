@@ -3,7 +3,10 @@ package tn.controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -13,6 +16,7 @@ import tn.models.Employees;
 import tn.services.EmployeeService;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -96,7 +100,26 @@ public class AddEmployee {
     @FXML
     private Button uploadButton;
 
+    @FXML
+    private MenuItem femaleid;
+
+    @FXML
+    private MenuItem maleid;
+
+
+
     private final EmployeeService employeeService = new EmployeeService();
+
+
+    @FXML
+    void setGenderF(ActionEvent event) {
+        gendreField.setText(femaleid.getText());
+    }
+
+    @FXML
+    void setGenderM(ActionEvent event) {
+        gendreField.setText(maleid.getText());
+    }
 
 
     @FXML
@@ -202,6 +225,16 @@ public class AddEmployee {
             );
 
             employeeService.add(employeeToAdd);
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/DisplayEmployees.fxml"));
+                Parent root = loader.load();
+                Stage stage = (Stage) saveButton.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace(); // Handle the exception, e.g., log it or show an error dialog
+            }
         }
     }
 }

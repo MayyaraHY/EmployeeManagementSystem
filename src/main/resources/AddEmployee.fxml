@@ -96,8 +96,8 @@
       <Button fx:id="uploadButton" layoutX="662.0" layoutY="331.0" mnemonicParsing="false" onAction="#browse" text="Importer" />
       <MenuButton fx:id="gendreField" layoutX="202.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Genre">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem fx:id="maleid" mnemonicParsing="false" onAction="#setGenderM" text="Homme" />
+          <MenuItem fx:id="femaleid" mnemonicParsing="false" onAction="#setGenderF" text="Femme" />
         </items>
       </MenuButton>
       <MFXButton fx:id="saveButton" layoutX="490.0" layoutY="450.0" onAction="#addEmployeeButton" prefHeight="43.0" prefWidth="233.0" style="-fx-background-color: #012E3C;" text="Enregistrer" textFill="#bad6ba">

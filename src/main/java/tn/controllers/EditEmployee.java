@@ -157,6 +157,7 @@ public class EditEmployee {
         startDateFiels.setValue(employee.getHireDateEmployee().toLocalDate());
         salaryField.setText(String.valueOf(employee.getSalaryEmployee()));
         gendreField.setText(employee.getGenderEmployee());
+        imageURLid.setText(employee.getImageEmployee());
     }
 
 

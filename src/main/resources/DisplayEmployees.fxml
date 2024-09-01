@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="533.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.controllers.DisplayEmployees">
    <children>
-      <MFXLegacyListView fx:id="employeesList" layoutX="43.0" layoutY="86.0" prefHeight="391.0" prefWidth="686.0" style="-fx-background-color: #E2D8F6;" />
+      <MFXLegacyListView fx:id="employeesList" layoutX="43.0" layoutY="86.0" prefHeight="391.0" prefWidth="686.0" style="-fx-background-color: linear-gradient(#e0f0e0, #b3c5b7, #9ab3a5, #85b2b2);" />
       <ImageView fx:id="addEmployeeButton" fitHeight="38.0" fitWidth="39.0" layoutX="54.0" layoutY="42.0" onMouseClicked="#addButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/add-group.png" />
