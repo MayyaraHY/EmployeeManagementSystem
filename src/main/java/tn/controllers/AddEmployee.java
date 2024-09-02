@@ -205,6 +205,15 @@ public class AddEmployee {
             alert.setContentText("Le salaire doit être un nombre valide.");
             alert.showAndWait();
 
+        } else if (!employeeService.isCINUnique(CINField.getText())) {
+
+                // Alert for non-unique CIN
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("CIN Not Unique");
+                alert.setContentText("Le CIN saisi est déjà utilisé. Veuillez en saisir un autre.");
+                alert.showAndWait();
+
         } else {
             // All fields are valid, proceed with adding the employee
             Date sqlBirthday = Date.valueOf(birthday);
@@ -237,4 +246,7 @@ public class AddEmployee {
             }
         }
     }
+
+
+
 }

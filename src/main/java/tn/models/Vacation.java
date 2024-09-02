@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class Vacation {
     private int idVac;
+    private int idEmployee;
     private Date startDate;
     private Date endDate;
     private String reason;
@@ -15,6 +16,13 @@ public class Vacation {
 
     public void setIdVac(int idVac) {
         this.idVac = idVac;
+    }
+
+    public int getIdEmployee() {
+        return idEmployee;
+    }
+    public void setIdEmployee(int idEmployee) {
+        this.idEmployee = idEmployee;
     }
 
     public Date getStartDate() {
@@ -50,17 +58,19 @@ public class Vacation {
     }
     public Vacation(){}
 
-    public Vacation(int idVac, Date startDate, Date endDate, String reason, String descriptionVac) {
+    public Vacation(int idVac, int idEmployee, Date startDate, Date endDate, String reason, String descriptionVac) {
 
         this.idVac = idVac;
+        this.idEmployee = idEmployee;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reason = reason;
         this.descriptionVac = descriptionVac;
     }
 
-    public Vacation(Date startDate, Date endDate, String reason, String descriptionVac) {
+    public Vacation(int idEmployee, Date startDate, Date endDate, String reason, String descriptionVac) {
 
+        this.idEmployee = idEmployee;
         this.startDate = startDate;
         this.endDate = endDate;
         this.reason = reason;
@@ -71,6 +81,7 @@ public class Vacation {
     public String toString() {
         return "Vacation{" +
                 "idVac=" + idVac +
+                ", idEmployee=" + idEmployee +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", reason='" + reason + '\'' +

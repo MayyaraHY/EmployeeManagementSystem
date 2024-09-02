@@ -130,6 +130,7 @@ public class EditEmployee {
 
 
 
+
     public void loadEmployeeData(int employeeId) {
         this.currentEmployeeId = employeeId;
         Employees employee = employeeService.getEmployeeById(employeeId);
@@ -242,6 +243,7 @@ public class EditEmployee {
             alert.setHeaderText("Invalid Salary");
             alert.setContentText("Le salaire doit être un nombre valide.");
             alert.showAndWait();
+
 
         } else {
             // All fields are valid, proceed with updating the employee

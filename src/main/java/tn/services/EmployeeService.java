@@ -55,7 +55,7 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
 
          PreparedStatement ps = cnx.prepareStatement(req);
             // Print debug information
-            System.out.println("Updating employee with ID: " + employee.getIdEmployee());
+          /*  System.out.println("Updating employee with ID: " + employee.getIdEmployee());
             System.out.println("Name: " + employee.getNameEmployee());
             System.out.println("Last Name: " + employee.getLastNameEmployee());
             System.out.println("CIN: " + employee.getCIN());
@@ -66,7 +66,7 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
             System.out.println("Gender: " + employee.getGenderEmployee());
             System.out.println("Position: " + employee.getPositionEmployee());
             System.out.println("Hire Date: " + employee.getHireDateEmployee());
-            System.out.println("Salary: " + employee.getSalaryEmployee());
+            System.out.println("Salary: " + employee.getSalaryEmployee());*/
 
 
             ps.setString(1, employee.getNameEmployee());
@@ -96,10 +96,7 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
     @Override
     public void remove(int idEmployee) {
         try {
-            // SQL query to delete an employee record
             String req = "DELETE FROM employees WHERE idEmployee = ?";
-
-            // Prepare the SQL statement
             PreparedStatement ps = cnx.prepareStatement(req);
             ps.setInt(1, idEmployee);
 
@@ -236,4 +233,60 @@ public class EmployeeService implements InterfaceCRUD<Employees> {
         }
     }
 
+    public boolean isCINUnique(String CIN) {
+        String query = "SELECT COUNT(*) FROM employees WHERE CIN = ?";
+        try (PreparedStatement statement = cnx.prepareStatement(query)) {
+            statement.setString(1, CIN);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1) == 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public Employees getEmployeeByCIN(String CIN) {
+        try {
+            // Query to fetch employee by CIN
+            String sql = "SELECT * FROM Employees WHERE CIN = ?";
+            PreparedStatement statement = cnx.prepareStatement(sql);
+            statement.setString(1, CIN);
+            ResultSet resultSet = statement.executeQuery();
+
+            // If employee is found
+            if (resultSet.next()) {
+                Employees employee = new Employees();
+                employee.setIdEmployee(resultSet.getInt("idEmployee"));
+                employee.setCIN(resultSet.getString("CIN"));
+                // Set other employee attributes...
+                return employee;
+            } else {
+                return null; // No employee found
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public int fetchEmployeeIdFromCIN(String cin) {
+        int employeeId = -1; // Default to -1 if not found
+        String query = "SELECT idEmployee FROM Employees WHERE CIN = ?";
+
+        try (PreparedStatement statement = cnx.prepareStatement(query)) {
+            statement.setString(1, cin);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    employeeId = resultSet.getInt("idEmployee");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error fetching employee ID by CIN: " + e.getMessage());
+        }
+
+        return employeeId;
+    }
 }
