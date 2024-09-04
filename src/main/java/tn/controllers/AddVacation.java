@@ -3,11 +3,12 @@ package tn.controllers;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import tn.models.Employees;
+import javafx.stage.Stage;
 import tn.models.Vacation;
 import tn.services.EmployeeService;
 import tn.services.VacationService;
@@ -19,9 +20,6 @@ public class AddVacation {
 
     @FXML
     private TextField CINField;
-
-    @FXML
-    private AnchorPane background;
 
     @FXML
     private TextField descriptionField;
@@ -38,6 +36,9 @@ public class AddVacation {
     @FXML
     private DatePicker startDateFiels;
 
+
+
+
     EmployeeService employeeService = new EmployeeService();
     VacationService vacationService = new VacationService();
 
@@ -46,6 +47,8 @@ public class AddVacation {
         CINField.setText(CIN);
       //  CINField.setDisable(true);
     }
+
+
 
 
     @FXML

@@ -81,6 +81,7 @@ public class EmployeeItem implements Initializable {
             // Get the controller of the addVacation.fxml
             AddVacation addVacationController = loader.getController();
 
+
             // Set CIN and Employee ID in the new window
             String employeeCIN = CINid.getText(); // Assuming CINField holds the current employee CIN
             addVacationController.setEmployeeDetails(employeeCIN);
@@ -131,25 +132,23 @@ public class EmployeeItem implements Initializable {
                     TextFlow textFlow = new TextFlow();
 
 
-                    String labelStyle = "-fx-fill: #9b8385;  -fx-font-size: 27  ;";
-                    String nameStyle = "-fx-fill: #8b7080;  -fx-font-size: 40;";
-
-                    String dataStyle = "-fx-fill: #9b8385; -fx-font-size: 20;";
+                    String labelStyle = "-fx-fill:#4558A5;  -fx-font-size: 20; -fx-font-family: 'Century Gothic'  ;";
+                    String dataStyle = "-fx-fill: #32438F; -fx-font-size: 17; -fx-font-family: 'Century Gothic';";
 
 
 
 
                     Text startDateText = new Text("Début: ");
                     startDateText.setStyle(labelStyle);
-                    Text startDateData  = new Text(vacation.getStartDate() + "\n");
+                    Text startDateData  = new Text(dateFormat.format(vacation.getStartDate()) + "\n");
                     startDateData.setStyle(dataStyle);
 
                     Text endDateText = new Text("Fin: ");
                     endDateText.setStyle(labelStyle);
-                    Text endDateData = new Text(vacation.getEndDate() + "\n");
+                    Text endDateData = new Text(dateFormat.format(vacation.getEndDate()) + "\n");
                     endDateData.setStyle(dataStyle);
 
-                    Text reasontext = new Text("Réson: ");
+                    Text reasontext = new Text("Raison: ");
                     reasontext.setStyle(labelStyle);
                     Text reasonData = new Text(vacation.getReason() + "\n");
                     reasonData.setStyle(dataStyle);
@@ -159,14 +158,6 @@ public class EmployeeItem implements Initializable {
                     Text descriptionData = new Text(vacation.getDescriptionVac() + "\n");
                     descriptionData.setStyle(dataStyle);
 
-                    startDateText.setWrappingWidth(200);
-                    startDateData.setWrappingWidth(200);
-                    endDateText.setWrappingWidth(200);
-                    endDateData.setWrappingWidth(200);
-                    reasontext.setWrappingWidth(200);
-                    reasonData.setWrappingWidth(200);
-                    descriptionText.setWrappingWidth(200);
-                    descriptionData.setWrappingWidth(200);
 
 
 
@@ -206,29 +197,56 @@ public class EmployeeItem implements Initializable {
 
 
                     textFlow.getChildren().addAll(startDateText, startDateData, endDateText, endDateData, reasontext, reasonData, descriptionText, descriptionData );
-                    textFlow.setPadding(new Insets(20, 0, 0,20 ));
+                    textFlow.setPadding(new Insets(10, 0, 0,20 ));
 
-                    container.add(textFlow, 1, 0); // Employee details in the middle
+                    container.add(textFlow, 0, 0); // Employee details in the middle
                     container.add(buttonContainer, 2, 0); // Buttons on the right side
 
 
 
                     // Adjust column widths
-                    ColumnConstraints col1 = new ColumnConstraints(150); // Image column
                     ColumnConstraints col2 = new ColumnConstraints(300); // Text column
                     ColumnConstraints col3 = new ColumnConstraints(100); // Button column
-                    container.getColumnConstraints().addAll(col1, col2, col3);
+                    container.getColumnConstraints().addAll( col2, col3);
                     container.setHgap(30); // Horizontal gap between columns
 
                     setGraphic(container); // Set the constructed UI as the cell graphic
+
+
+                    deleteButton.setOnAction(event -> {
+                        // Create a confirmation alert
+                        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+                        confirmationAlert.setTitle("Confirmation de Suppression");
+                        confirmationAlert.setHeaderText(null);
+                        confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer cet élement ?");
+
+                        // Set the button types for the alert
+                        ButtonType yesButton = new ButtonType("Oui");
+                        ButtonType noButton = new ButtonType("Non");
+                        confirmationAlert.getButtonTypes().setAll(yesButton, noButton);
+
+                        // Show the alert and wait for user response
+                        confirmationAlert.showAndWait().ifPresent(response -> {
+                            if (response == yesButton) {
+                                deleteVacation(vacation.getIdVac());
+                            }
+                        });
+                    });
+
 
                 }
             }
         });
 
         vancationList.getItems().addAll(vacationService.getVacationsByEmployeeId(employee.getIdEmployee()));
+    }
 
 
+    public void deleteVacation(int idVac) {
+        // Call the remove method from EmployeesService
+        vacationService.remove(idVac);
 
+        // refresh the list or remove the item from the UI
+        vancationList.getItems().removeIf(vac -> vac.getIdVac() == idVac);
     }
 }
